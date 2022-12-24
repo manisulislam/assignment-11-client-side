@@ -6,7 +6,7 @@ import { AuthContext } from '../../Context/UserContext';
 
 
 const LogIn = () => {
-  const {googleLogIn}= useContext(AuthContext)
+  const {googleLogIn,userSignIn}= useContext(AuthContext)
  
   const handleLogIn = event =>{
     event.preventDefault()
@@ -16,6 +16,12 @@ const LogIn = () => {
     const user ={email, password}
 
     console.log(user)
+    userSignIn(email, password)
+    .then(result => {
+      const user = result.user;
+      console.log(user)
+    })
+    .catch(error => console.log('error', error))
     form.reset()
   }
   const provider = new GoogleAuthProvider()
