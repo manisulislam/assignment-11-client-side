@@ -1,7 +1,13 @@
-import React from 'react';
+import React,  {useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { FcGoogle } from 'react-icons/fc';
+import { GoogleAuthProvider } from 'firebase/auth';
+import { AuthContext } from '../../Context/UserContext';
+
 
 const LogIn = () => {
+  const {googleLogIn}= useContext(AuthContext)
+ 
   const handleLogIn = event =>{
     event.preventDefault()
     const form = event.target;
@@ -11,6 +17,19 @@ const LogIn = () => {
 
     console.log(user)
     form.reset()
+  }
+  const provider = new GoogleAuthProvider()
+  const handleGoogleLogIn =()=>{
+    googleLogIn(provider)
+    .then(result =>{
+      const user = result.user
+      console.log(user)
+    })
+    .catch(
+      error => console.error('error', error)
+    )
+   
+    
   }
   
     return (
@@ -33,8 +52,11 @@ const LogIn = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input type="text" placeholder="password" name='password' className="input input-bordered" />
+                <div className="divider">OR</div>
+                <button onClick={handleGoogleLogIn} className="btn btn-outline btn-secondary"><FcGoogle></FcGoogle>  GOOGLE</button>
                 <label className="label">
-                  <p className="label-text-alt">Create a account..   <Link className='text-orange-500' to='/register'>Register</Link></p>
+
+                  <p className="label-text-alt">Create an account..   <Link className='text-orange-500' to='/register'>Register</Link></p>
                 </label>
               </div>
               <div className="form-control mt-6">
