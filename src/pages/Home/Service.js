@@ -10,7 +10,7 @@ const Service = ({service}) => {
                 <p>{details.length>100 ? details.slice(0,100)+ '...': details}</p>
                 <p>Price:${price}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button className="btn btn-primary">View Details</button>
                 </div>
             </div>
         </div>

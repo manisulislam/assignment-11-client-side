@@ -20,13 +20,15 @@ const Home = () => {
             <Banner></Banner>
             <SectionOne></SectionOne>
             <SectionTwo></SectionTwo>
-            <div className='grid grid-cols-2 m-5'>
+            <div className='grid grid-cols-3 m-5'>
                 {
                     services.map(service=><Service 
                     key={service._id}
                     service={service}></Service>)
                 }
+               
             </div>
+            <button className="btn btn-primary mx-auto my-5">SEE ALL</button>
            
         </div>
     );
