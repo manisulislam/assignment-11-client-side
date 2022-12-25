@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Banner from './Banner';
 import SectionOne from './SectionOne';
@@ -28,7 +29,7 @@ const Home = () => {
                 }
                
             </div>
-            <button className="btn btn-primary mx-auto my-5">SEE ALL</button>
+            <Link to='/servicesDetails'><button className="btn btn-primary mx-auto my-5">SEE ALL</button></Link>
            
         </div>
     );
