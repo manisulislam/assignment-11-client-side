@@ -20,7 +20,7 @@ const Home = () => {
             <Banner></Banner>
             <SectionOne></SectionOne>
             <SectionTwo></SectionTwo>
-            <div>
+            <div className='grid grid-cols-2 m-5'>
                 {
                     services.map(service=><Service 
                     key={service._id}
