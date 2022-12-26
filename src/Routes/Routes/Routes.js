@@ -46,7 +46,8 @@ import Details from "../../pages/Home/Details";
             },
             {
                 path: '/details/:id',
-                element: <Details></Details>
+                element: <Details></Details>,
+                loader:({params})=>fetch(`http://localhost:5000/viewDetails/${params.id}`)
             }
         ]
         
