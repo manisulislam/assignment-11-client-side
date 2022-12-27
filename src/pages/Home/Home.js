@@ -21,7 +21,7 @@ const Home = () => {
             <Banner></Banner>
             <SectionOne></SectionOne>
             <SectionTwo></SectionTwo>
-            <div className='grid grid-cols-3 m-5'>
+            <div className='grid grid-cols-1 md:gird-cols-2 lg:grid-cols-3 m-5'>
                 {
                     services.map(service=><Service 
                     key={service._id}
