@@ -1,7 +1,10 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Context/UserContext';
+import Review from './Review';
 
 const Details = () => {
+    const {user} = useContext(AuthContext)
     const viewDetails = useLoaderData()
     const { _id, name, image, details, price } = viewDetails;
 
@@ -20,6 +23,9 @@ const Details = () => {
         </div>
         <div>
             <h1 className='text-4xl font-semibold text-orange-500'>OUR CUSTOMER REVIEW</h1>
+        <div className='my-12'>
+        {user?.uid ?<Review></Review>: <Link to='/login'> Please log in to add a review  <button className="btn btn-primary">login</button></Link> }
+        </div>
             
 
              
