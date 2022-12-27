@@ -3,7 +3,7 @@ import ServiceDetail from './ServiceDetail';
 
 const ServicesDetails = () => {
     const [allServices, setAllServices]= useState([])
-    console.log(allServices)
+   
     useEffect(()=>{
         fetch('http://localhost:5000/servicesDetails')
         .then(res=>res.json())

@@ -1,21 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Review = () => {
+    const [review, setReview]= useState(null)
+    useEffect(()=>{
+        fetch('')
+    },[])
     return (
         <div>
-           
-            <div className="form-control w-96 my-12 mx-auto">
-                <label className="label">
-                    <span className="label-text text-2xl font-semibold">Please enter your review</span>
-                    
-                </label>
-                <textarea className="textarea textarea-bordered h-24" placeholder="Bio"></textarea>
-                <label className="label">
-                    
-                </label>
-                <button className="btn btn-primary">Button</button>
-            </div>
-            
+            <h3>this is review section</h3>
         </div>
     );
 };
