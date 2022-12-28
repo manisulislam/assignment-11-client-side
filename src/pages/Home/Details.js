@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
 import useDocumentTitle from '../../DynamicTitle/useDocumentTitle';
@@ -48,7 +49,13 @@ const Details = () => {
         
        <div>
          <div className="card w-96 bg-base-100 mx-auto shadow-xl my-8">
-            <figure><img src={image} alt="Shoes" /></figure>
+            <PhotoProvider>
+                <PhotoView src={image}>
+                <figure><img src={image} alt="Shoes" /></figure>
+
+                </PhotoView>
+            </PhotoProvider>
+            
             <div className="card-body">
                 <h2 className="card-title">{serviceName}</h2>
                 <p>{details}</p>
