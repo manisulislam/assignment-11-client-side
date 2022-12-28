@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
+import useDocumentTitle from '../../DynamicTitle/useDocumentTitle';
 import Review from './Review';
 
 
@@ -41,6 +42,7 @@ const Details = () => {
         })
 
     }
+    useDocumentTitle('GOOD CHOICE/home/viewdetails')
 
     return (
         
