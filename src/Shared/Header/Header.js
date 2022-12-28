@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
+import useDocumentTitle from '../../DynamicTitle/useDocumentTitle';
 
 const Header = () => {
   const { user, UserLogOut, setUser  } = useContext(AuthContext)
 
   const logOut =()=>{
+   
     UserLogOut()
     .then(()=>{
       setUser()
@@ -13,6 +15,7 @@ const Header = () => {
     .catch(error => console.log('error', error))
 
   }
+
 
 
   const menuItems = <>

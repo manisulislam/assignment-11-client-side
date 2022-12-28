@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useDocumentTitle from '../../DynamicTitle/useDocumentTitle';
 import MyReview from './MyReview';
 
 
@@ -13,6 +14,7 @@ const MyReviews = () => {
             setMyReviews(data)
         })
     },[])
+    useDocumentTitle('GOOD CHOICE/myreviews')
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
             

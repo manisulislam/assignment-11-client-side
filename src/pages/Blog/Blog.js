@@ -1,6 +1,10 @@
 import React from 'react';
+import useDocumentTitle from '../../DynamicTitle/useDocumentTitle';
+
 
 const Blog = () => {
+
+    useDocumentTitle('GOOD CHOICE/blog')
     return (
         <div>
             <h1 className='text-3xl text-orange-600 font-bold my-5'>WELCOME TO OUR GOOD CHOICE</h1>

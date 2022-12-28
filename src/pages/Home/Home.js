@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useDocumentTitle from '../../DynamicTitle/useDocumentTitle';
 
 import Banner from './Banner';
 import SectionOne from './SectionOne';
@@ -16,8 +17,12 @@ const Home = () => {
            setServices(data)
         })
     },[])
+    
+
+    useDocumentTitle('GOOD CHOICE/home')
     return (
-        <div>            
+        <div>  
+               
             <Banner></Banner>
             <SectionOne></SectionOne>
             <SectionTwo></SectionTwo>
