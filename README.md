@@ -2,6 +2,17 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+
+### GOOD CHOICE WEBSITE FEATURES
+
+1. use tailwind css  component library daisyUI
+2. use mongodb database and express
+3. react-photo-view implement on the iamge
+4. Impelment Dynamic titile
+5. good ui/ux and also have a blog section for information 
+
+
 ## Available Scripts
 
 In the project directory, you can run:
