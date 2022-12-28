@@ -5,10 +5,11 @@ import LogIn from "../../pages/LogIn/LogIn";
 import Register from "../../pages/Register/Register";
 import Blog from '../../pages/Blog/Blog'
 import MyReviews from "../../pages/MyReviews/MyReviews";
-import AddReviews from "../../pages/AddReviews/AddReviews";
 import PrivateRoute from "./PrivateRoute";
 import ServicesDetails from "../../pages/Home/ServicesDetails";
 import Details from "../../pages/Home/Details";
+import ReviewUpdate from "../../pages/MyReviews/ReviewUpdate";
+import AddServices from "../../pages/AddServices/AddServices";
 
 
  export const routes = createBrowserRouter([
@@ -37,8 +38,8 @@ import Details from "../../pages/Home/Details";
                 element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute> 
             },
             {
-                path: '/addreviews',
-                element: <PrivateRoute><AddReviews></AddReviews></PrivateRoute> 
+                path: '/addservices',
+                element: <PrivateRoute><AddServices></AddServices></PrivateRoute> 
             },
             {
                 path: '/servicesDetails',
@@ -48,6 +49,11 @@ import Details from "../../pages/Home/Details";
                 path: '/details/:id',
                 element: <Details></Details>,
                 loader:({params})=>fetch(`http://localhost:5000/viewDetails/${params.id}`)
+            },
+            {
+                path: '/update/:id',
+                element: <ReviewUpdate></ReviewUpdate>,
+                loader: ({params})=>fetch(`http://localhost:5000/myReviews/${params.id}`)
             }
         ]
         

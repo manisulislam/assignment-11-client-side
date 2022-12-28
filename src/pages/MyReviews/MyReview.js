@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { VscAccount } from "react-icons/vsc";
+import { Link } from 'react-router-dom';
 
 
 const MyReview = ({ option,displayReview,setDisplayReview }) => {
@@ -37,8 +38,8 @@ const MyReview = ({ option,displayReview,setDisplayReview }) => {
                     <h1>{reviewerName}</h1>
                 </div>
                 <p> <span className='text-1xl text-orange-400'>Our Customer review:</span> {name}</p>
-                <button onClick={()=>handleDelete(option)} className="btn btn-outline btn-primary">DELETE</button>
-                <button className="btn btn-outline btn-secondary">UPDATE</button>
+                <Link><button onClick={()=>handleDelete(option)} className="btn btn-outline btn-primary w-full">DELETE</button></Link>
+                <Link to={`/update/${_id}`}><button className="btn btn-outline btn-secondary w-full">EDIT</button></Link>
 
 
             </div>
