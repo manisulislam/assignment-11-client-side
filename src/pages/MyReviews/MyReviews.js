@@ -5,6 +5,7 @@ import MyReview from './MyReview';
 
 const MyReviews = () => {
     const [myReviews, setMyReviews]= useState([])
+    const [displayReview, setDisplayReview] = useState(myReviews)
     useEffect(()=>{
         fetch('http://localhost:5000/myReviews')
         .then(res=> res.json())
@@ -19,6 +20,9 @@ const MyReviews = () => {
                 myReviews.map(option => <MyReview
                 key={option._id}
                 option={option}
+                displayReview={displayReview}
+                
+                setDisplayReview={setDisplayReview}
                 
                 ></MyReview>)
             }

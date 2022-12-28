@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { VscAccount } from "react-icons/vsc";
 
 
-const MyReview = ({ option }) => {
-    const { serviceName, reviewerPhoto, name, reviewerName } = option
+const MyReview = ({ option,displayReview,setDisplayReview }) => {
+    
+    const {_id, serviceName, reviewerPhoto, name, reviewerName } = option
+    const handleDelete=(option)=>{
+        console.log('deleting id ', option._id)
+        fetch(`http://localhost:5000/myReview/${option._id}`,{
+            method: 'DELETE'
+        })
+        .then(res=> res.json())
+        .then(data => {
+            console.log(data)
+            if(data.deletedCount > 0){
+                alert('deleted sucessfully')
+                const remainignReview = displayReview.filter(review => review._id!==option._id)
+                setDisplayReview(remainignReview)
+
+            }
+
+        })
+
+    }
+
     return (
         <div className="card w-72 my-12 shadow-xl">
             <div className="card-body">
@@ -17,7 +37,7 @@ const MyReview = ({ option }) => {
                     <h1>{reviewerName}</h1>
                 </div>
                 <p> <span className='text-1xl text-orange-400'>Our Customer review:</span> {name}</p>
-                <button className="btn btn-outline btn-primary">DELETE</button>
+                <button onClick={()=>handleDelete(option)} className="btn btn-outline btn-primary">DELETE</button>
                 <button className="btn btn-outline btn-secondary">UPDATE</button>
 
 
