@@ -22,6 +22,7 @@ const MyReviews = () => {
                 myReviews.map(option => <MyReview
                 key={option._id}
                 option={option}
+                myReviews={myReviews}
                 displayReview={displayReview}
                 
                 setDisplayReview={setDisplayReview}

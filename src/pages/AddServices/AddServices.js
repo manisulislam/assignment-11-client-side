@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
 const AddServices = () => {
+    
 
     const handleAddServices =(event)=>{
         event.preventDefault()
         const form = event.target;
         const name = form.name.value;
-        const image = form.image.value; 
+        const image = form.image; 
         const description= form.area.value;
         const price = form.price.value;
         const addServicesInfo ={
@@ -31,6 +32,8 @@ const AddServices = () => {
 
 
     }
+
+    
     return (
         <div>
             <h3 className='text-2xl font-bold my-12 text-orange-500 text-center'>ADD SERVICE IN GOOD CHOICE</h3>

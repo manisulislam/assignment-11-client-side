@@ -3,8 +3,9 @@ import { VscAccount } from "react-icons/vsc";
 import { Link } from 'react-router-dom';
 
 
-const MyReview = ({ option,displayReview,setDisplayReview }) => {
+const MyReview = ({ myReviews, option,displayReview,setDisplayReview }) => {
     
+    console.log(myReviews)
     const {_id, serviceName, reviewerPhoto, name, reviewerName } = option
     const handleDelete=(option)=>{
         console.log('deleting id ', option._id)
@@ -26,7 +27,12 @@ const MyReview = ({ option,displayReview,setDisplayReview }) => {
     }
 
     return (
-        <div className="card w-72 my-12 shadow-xl">
+
+    
+
+        <div>
+            { 
+            (!myReviews.length === 0) ?<div className="card w-72 my-12 shadow-xl">
             <div className="card-body">
                 <h2 className="card-title"><span className='text-lg text-orange-400'>Service Name:</span> {serviceName}</h2>
                 <div className='flex   justify-between items-center'>
@@ -43,6 +49,11 @@ const MyReview = ({ option,displayReview,setDisplayReview }) => {
 
 
             </div>
+        </div> : <p className='text-3xl text-center my-64 font-semibold'> No reviews  were added</p>
+            
+            
+            }
+           
         </div>
     );
 };
